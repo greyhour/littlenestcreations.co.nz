@@ -1,1 +1,945 @@
-test
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Little Nest Creations | Handmade crochet for little ones, NZ</title>
+  <meta name="description" content="Handmade crochet for little ones by Samantha Sells. Bunny teething rings, cuddly animals and custom colour requests, lovingly made in New Zealand.">
+  <link rel="canonical" href="https://littlenestcreations.co.nz/">
+  <meta name="theme-color" content="#FAFBF5">
+
+  <!-- Favicons (stored in /images/) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Social sharing (Facebook, Instagram DMs, Messenger, iMessage, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Little Nest Creations">
+  <meta property="og:locale" content="en_NZ">
+  <meta property="og:url" content="https://littlenestcreations.co.nz/">
+  <meta property="og:title" content="Little Nest Creations | Handmade crochet for little ones">
+  <meta property="og:description" content="Soft, snuggly crochet pieces for babies and kids, handmade with love in New Zealand by Samantha Sells.">
+  <meta property="og:image" content="https://littlenestcreations.co.nz/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Little Nest Creations logo next to a pink and a blue crochet bunny teething ring">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts are self-hosted in /fonts/ (all SIL Open Font Licence) -->
+  <link rel="preload" href="fonts/cormorant-garamond-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jost-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/ephesis-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Little Nest Creations",
+    "url": "https://littlenestcreations.co.nz/",
+    "logo": "https://littlenestcreations.co.nz/images/android-chrome-512x512.png",
+    "image": "https://littlenestcreations.co.nz/images/og-image.jpg",
+    "description": "Handmade crochet for little ones, made in New Zealand.",
+    "founder": { "@type": "Person", "name": "Samantha Sells" },
+    "areaServed": { "@type": "Country", "name": "New Zealand" },
+    "sameAs": [
+      "https://www.instagram.com/littlenestcreationsnz",
+      "https://www.facebook.com/profile.php?id=61595141005479"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ---------- Fonts ---------- */
+    @font-face {
+      font-family: "Cormorant Garamond";
+      src: url("fonts/cormorant-garamond-latin-variable.woff2") format("woff2");
+      font-weight: 300 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Jost";
+      src: url("fonts/jost-latin-variable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Ephesis";
+      src: url("fonts/ephesis-latin-400.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ---------- Brand colours (taken from the logo and business card) ---------- */
+    :root {
+      --cream: #FAFBF5;      /* card background */
+      --white: #FFFFFF;
+      --blush-50: #FBF0EE;
+      --blush-100: #F6E0DD;
+      --blush-300: #F4B6B3;  /* logo pink */
+      --rose-500: #C06A65;   /* script accents (large text only) */
+      --rose-700: #A9534F;   /* links */
+      --sage-50: #F0F2E8;
+      --sage-100: #E3E6D8;
+      --sage-300: #B0B29A;
+      --sage-400: #A1A38A;   /* logo green */
+      --sage-600: #7A8065;
+      --sage-650: #6A7157;   /* wordmark text */
+      --sage-700: #5E6650;   /* headings, buttons */
+      --sage-800: #525A45;
+      --ink: #454B3B;        /* body text */
+      --muted: #646B52;
+
+      --font-serif: "Cormorant Garamond", Garamond, "Times New Roman", serif;
+      --font-sans: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
+      --font-script: "Ephesis", "Brush Script MT", cursive;
+
+      --radius: 18px;
+      --shadow: 0 14px 34px -18px rgba(69, 75, 59, .35);
+      --container: 1120px;
+      --header-h: 72px;
+    }
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 8px);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    html:has(.lightbox[open]) { overflow: hidden; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img, svg { display: block; max-width: 100%; }
+    img { height: auto; }
+    a { color: var(--rose-700); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+    a:hover { color: var(--sage-800); }
+    :focus-visible { outline: 2px solid var(--rose-700); outline-offset: 3px; border-radius: 6px; }
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      color: var(--sage-700);
+      line-height: 1.12;
+      margin: 0 0 .5em;
+    }
+    h2 { font-size: clamp(2.2rem, 1.7rem + 2vw, 3.1rem); }
+    h3 { font-size: 1.45rem; }
+    p { margin: 0 0 1em; text-wrap: pretty; }
+    h1, h2, h3 { text-wrap: balance; }
+
+    .container { width: min(100% - 2.5rem, var(--container)); margin-inline: auto; }
+    .visually-hidden {
+      position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    .skip-link {
+      position: absolute; left: 1rem; top: -100px; z-index: 100;
+      background: var(--sage-700); color: #fff; padding: .6rem 1rem; border-radius: 8px;
+    }
+    .skip-link:focus { top: 1rem; color: #fff; }
+    .script { font-family: var(--font-script); font-weight: 400; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      font: 500 1rem/1 var(--font-sans);
+      letter-spacing: .03em;
+      padding: 1rem 1.65rem;
+      border-radius: 999px;
+      border: 1.5px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .btn svg { width: 1.1em; height: 1.1em; }
+    .btn--primary { background: var(--sage-700); color: #fff; box-shadow: 0 10px 22px -12px rgba(82, 90, 69, .8); }
+    .btn--primary:hover { background: var(--sage-800); color: #fff; transform: translateY(-1px); }
+    .btn--ghost { background: rgba(255, 255, 255, .7); color: var(--sage-700); border-color: var(--sage-400); }
+    .btn--ghost:hover { background: var(--white); color: var(--sage-800); border-color: var(--sage-700); }
+    .btn[disabled] { opacity: .7; cursor: progress; transform: none; }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250, 251, 245, .9);
+      -webkit-backdrop-filter: saturate(1.2) blur(10px);
+      backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .site-header.is-scrolled { border-bottom-color: var(--sage-100); box-shadow: 0 8px 24px -20px rgba(69, 75, 59, .6); }
+    .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: var(--header-h); }
+    .brand { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: inherit; }
+    .brand img { width: 52px; height: 52px; }
+    .brand__text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+    .brand__name {
+      font-family: var(--font-serif); font-weight: 500; text-transform: uppercase;
+      letter-spacing: .22em; margin-right: -.22em; font-size: 1.08rem; color: var(--sage-650);
+    }
+    .brand__script { font-family: var(--font-script); color: var(--rose-500); font-size: 1.55rem; margin-top: -.12em; }
+    .nav { display: flex; align-items: center; gap: clamp(.85rem, 2.6vw, 2.1rem); list-style: none; margin: 0; padding: 0; }
+    .nav a {
+      position: relative; display: inline-block; padding: .35rem 0;
+      color: var(--ink); text-decoration: none; font-size: .98rem; letter-spacing: .03em;
+    }
+    .nav a::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: .15rem; height: 1px;
+      background: var(--rose-500); transform: scaleX(0); transform-origin: left; transition: transform .25s;
+    }
+    .nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
+    .nav .nav__cta { padding: .5rem 1.15rem; border: 1.5px solid var(--sage-400); border-radius: 999px; color: var(--sage-700); }
+    .nav .nav__cta::after { display: none; }
+    .nav .nav__cta:hover { background: var(--sage-700); border-color: var(--sage-700); color: #fff; }
+    @media (max-width: 720px) {
+      :root { --header-h: 62px; }
+      .brand__text { display: none; }
+      .brand img { width: 44px; height: 44px; }
+      .nav { gap: .9rem; }
+      .nav a { font-size: .9rem; letter-spacing: .01em; }
+      .nav .nav__cta { padding: .4rem .8rem; }
+    }
+    @media (max-width: 359px) { .nav li:nth-child(2) { display: none; } }
+
+    /* ---------- Hero (based on the business card) ---------- */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      text-align: center; background: var(--cream);
+      padding: clamp(1rem, 3.5vh, 2.75rem) 0 calc(max(100vw, 900px) * .17 + 1.25rem);
+    }
+    .hero__inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+    .hero__logo { width: clamp(220px, min(30vw, 40vh), 350px); margin: 0 0 .25rem; }
+    .hero__title {
+      font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+      font-weight: 500; letter-spacing: .005em;
+      margin: .2rem 0 .6rem;
+    }
+    .hero__title .script { color: var(--rose-500); font-size: 1.3em; line-height: .8; white-space: nowrap; }
+    .hero__intro { max-width: 31rem; color: var(--muted); font-size: clamp(1.06rem, 1rem + .3vw, 1.2rem); margin-bottom: 1.6rem; text-wrap: balance; }
+    .hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+    .hero__meadow {
+      position: absolute; z-index: 1; bottom: 0; left: 50%;
+      width: max(100%, 900px); max-width: none; transform: translateX(-50%);
+      pointer-events: none; user-select: none;
+    }
+    @media (max-width: 575px) { .hero__meadow { width: 577px; } } /* centre crop, same scale as 900px */
+    @media (min-width: 2000px) {
+      .hero__meadow {
+        width: 2000px;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+      }
+      .hero { padding-bottom: calc(2000px * .17 + 1.25rem); }
+    }
+    .butterfly { position: absolute; z-index: 1; pointer-events: none; animation: flutter 7s ease-in-out infinite alternate; }
+    .butterfly--pink { width: clamp(52px, 8.5vw, 140px); top: clamp(.75rem, 6%, 4.5rem); right: clamp(.5rem, 7vw, 8rem); }
+    .butterfly--yellow { width: clamp(34px, 4.8vw, 82px); top: 42%; left: clamp(.25rem, 17vw, 19rem); animation-duration: 9s; animation-delay: -4s; }
+    @keyframes flutter {
+      0%   { transform: translate(0, 0) rotate(-4deg); }
+      50%  { transform: translate(6px, -12px) rotate(3deg); }
+      100% { transform: translate(-5px, 4px) rotate(-1deg); }
+    }
+    @media (max-width: 1099px) { .butterfly--yellow { top: 24%; left: 7vw; } }
+    @media (max-width: 640px) { .butterfly--yellow { top: 13.5rem; left: .75rem; } }
+
+    /* ---------- Sections ---------- */
+    .section { position: relative; padding: clamp(4rem, 9vw, 7rem) 0; }
+    .section__header { text-align: center; max-width: 42rem; margin: 0 auto clamp(2rem, 4.5vw, 3.25rem); }
+    .section__lead { color: var(--muted); font-size: 1.1rem; margin: 0; }
+    .kicker {
+      font-family: var(--font-script); color: var(--rose-500);
+      font-size: clamp(2rem, 1.7rem + 1vw, 2.5rem); line-height: 1; margin: 0 0 .15em;
+    }
+    .divider { display: flex; align-items: center; justify-content: center; gap: .7rem; color: var(--blush-300); margin: .2rem 0 1.2rem; }
+    .divider::before, .divider::after { content: ""; width: 2.75rem; height: 1px; background: var(--sage-300); }
+    .divider svg { width: 14px; height: 14px; }
+    .split .divider, .contact__intro .divider { justify-content: flex-start; }
+
+    /* ---------- Creations gallery ---------- */
+    .gallery-wrap { container-type: inline-size; }
+    .gallery {
+      --cols: 3;
+      --gap: clamp(.65rem, 1.6vw, 1.15rem);
+      list-style: none; margin: 0; padding: 0;
+      display: grid; gap: var(--gap);
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      grid-auto-rows: 22rem;
+      grid-auto-flow: dense;
+    }
+    @supports (width: 1cqi) {
+      /* every row is exactly as tall as a 4:5 portrait tile */
+      .gallery { grid-auto-rows: calc((100cqi - (var(--cols) - 1) * var(--gap)) / var(--cols) * 1.25); }
+    }
+    @media (max-width: 760px) { .gallery { --cols: 2; } }
+    .gallery__item {
+      position: relative; overflow: hidden; border-radius: var(--radius);
+      background: var(--sage-100); box-shadow: var(--shadow);
+    }
+    .gallery__item--wide { grid-column: span 2; }
+    .gallery__link { display: block; height: 100%; color: inherit; border-radius: inherit; }
+    .gallery__link img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+    }
+    .gallery__link:hover img, .gallery__link:focus-visible img { transform: scale(1.045); }
+    .gallery__link:focus-visible { outline-offset: -4px; outline-color: var(--white); }
+    .gallery__caption {
+      position: absolute; left: .75rem; right: .75rem; bottom: .75rem;
+      display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+      padding: .6rem .6rem .6rem 1rem; border-radius: 12px;
+      background: rgba(250, 251, 245, .93); color: var(--ink);
+      font-size: .93rem; line-height: 1.3; text-align: left;
+      opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s;
+    }
+    .gallery__caption svg { flex: none; width: 1.9rem; height: 1.9rem; padding: .4rem; border-radius: 50%; background: var(--blush-50); color: var(--rose-700); }
+    .gallery__link:hover .gallery__caption, .gallery__link:focus-visible .gallery__caption { opacity: 1; transform: none; }
+    @media (hover: none) { .gallery__caption { display: none; } }
+
+    .shop-note {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .9rem 1.5rem;
+      max-width: 50rem; margin: clamp(2rem, 4.5vw, 3rem) auto 0; padding: 1.3rem 1.6rem;
+      background: var(--white); border: 1.5px dashed var(--sage-300); border-radius: var(--radius);
+      text-align: center;
+    }
+    .shop-note p { margin: 0; }
+    .shop-note strong { font-weight: 500; color: var(--sage-700); }
+
+    /* ---------- Split layout (custom requests) ---------- */
+    .custom { background: var(--blush-50); }
+    .split { display: grid; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+    @media (min-width: 860px) { .split { grid-template-columns: 5fr 6fr; } }
+    .split__text .kicker, .split__text h2 { text-align: left; }
+    .frame { position: relative; margin: 0 1rem 1rem 0; }
+    .frame::before {
+      content: ""; position: absolute; inset: 1rem -1rem -1rem 1rem; z-index: 0;
+      border: 1.5px solid var(--blush-300); border-radius: calc(var(--radius) + 4px);
+    }
+    .frame img {
+      position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .steps { list-style: none; counter-reset: step; margin: 1.6rem 0 2.1rem; padding: 0; display: grid; gap: 1rem; }
+    .steps li { counter-increment: step; display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; align-items: start; }
+    .steps li::before {
+      content: counter(step); display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+      background: var(--white); border: 1.5px solid var(--blush-300); color: var(--rose-700);
+      font: 600 1.3rem/1 var(--font-serif); font-variant-numeric: lining-nums;
+    }
+    .steps strong { display: block; font-weight: 500; color: var(--sage-800); }
+    .steps span { color: var(--muted); }
+
+    /* ---------- About ---------- */
+    .about { overflow: hidden; }
+    .about__card {
+      position: relative; z-index: 1; max-width: 48rem; margin: 0 auto; text-align: center;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.4rem, 6vw, 4.5rem);
+      background: var(--white); border-radius: 28px; box-shadow: var(--shadow);
+    }
+    .about__mark { width: 84px; height: 84px; margin: 0 auto .5rem; }
+    .about__card p:not(.kicker):not(.signature) { font-size: 1.1rem; }
+    .signature { font-family: var(--font-script); color: var(--rose-500); font-size: 2.6rem; line-height: 1; margin: 1.6rem 0 0; }
+    .signature span { display: block; font: 400 .95rem/1.4 var(--font-sans); color: var(--muted); letter-spacing: .04em; margin-bottom: .2rem; }
+    .about__bouquet {
+      position: absolute; z-index: 0; left: 0; bottom: 0;
+      width: clamp(150px, 24vw, 330px); pointer-events: none; user-select: none;
+    }
+    .about__bouquet--right { left: auto; right: 0; transform: scaleX(-1); width: clamp(110px, 16vw, 230px); opacity: .9; }
+
+    /* ---------- Care ---------- */
+    .care { background: var(--sage-50); }
+    .care__grid {
+      list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+    }
+    .care__item { background: var(--white); border-radius: var(--radius); padding: 1.8rem 1.4rem 1.6rem; text-align: center; }
+    .care__icon {
+      display: grid; place-items: center; width: 3.4rem; height: 3.4rem; margin: 0 auto 1rem;
+      border-radius: 50%; background: var(--blush-50); color: var(--rose-500);
+    }
+    .care__icon svg { width: 1.6rem; height: 1.6rem; }
+    .care__item h3 { font-size: 1.4rem; margin-bottom: .35rem; }
+    .care__item p { margin: 0; color: var(--muted); font-size: .98rem; }
+
+    /* ---------- Contact ---------- */
+    .contact__grid { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
+    @media (min-width: 900px) { .contact__grid { grid-template-columns: 5fr 7fr; } }
+    .contact__intro .kicker, .contact__intro h2 { text-align: left; }
+    .socials { display: grid; gap: .75rem; margin-top: 1.75rem; }
+    .socials__title { font-size: .9rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 .1rem; }
+    .social {
+      display: flex; align-items: center; gap: 1rem; padding: .9rem 1.1rem;
+      background: var(--white); border: 1px solid var(--sage-100); border-radius: 16px;
+      color: var(--ink); text-decoration: none;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .social:hover { color: var(--ink); border-color: var(--blush-300); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .social__badge {
+      flex: none; display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border-radius: 50%;
+      background: var(--blush-50); color: var(--rose-700);
+    }
+    .social__badge svg { width: 1.3rem; height: 1.3rem; }
+    .social__label { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+    .social__label strong { font-weight: 500; color: var(--sage-800); }
+    .social__label span { color: var(--muted); font-size: .92rem; overflow-wrap: anywhere; }
+    .social__arrow { margin-left: auto; flex: none; width: 1.15rem; height: 1.15rem; color: var(--sage-600); }
+
+    .form-card {
+      position: relative; background: var(--white); border-radius: 26px;
+      padding: clamp(1.5rem, 4vw, 2.6rem); box-shadow: var(--shadow);
+    }
+    .form-grid { display: grid; gap: 1.15rem; }
+    @media (min-width: 600px) {
+      .form-grid { grid-template-columns: 1fr 1fr; }
+      .field--full { grid-column: 1 / -1; }
+    }
+    .field label { display: block; margin-bottom: .4rem; font-size: .95rem; font-weight: 500; color: var(--sage-800); }
+    .field .optional { font-weight: 400; color: var(--muted); }
+    .field input, .field select, .field textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+      background: var(--cream); border: 1.5px solid var(--sage-100); border-radius: 12px;
+      padding: .85rem 1rem;
+      transition: border-color .2s, box-shadow .2s, background-color .2s;
+    }
+    .field textarea { min-height: 9.5rem; resize: vertical; }
+    .field select {
+      -webkit-appearance: none; appearance: none; padding-right: 2.75rem; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235E6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.1rem;
+    }
+    .field input:hover, .field select:hover, .field textarea:hover { border-color: var(--sage-300); }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; background: var(--white); border-color: var(--sage-600);
+      box-shadow: 0 0 0 4px rgba(161, 163, 138, .28);
+    }
+    .field input:user-invalid, .field textarea:user-invalid { border-color: var(--rose-700); }
+    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.25rem; margin-top: 1.5rem; }
+    .form-status { margin: 0; font-size: .98rem; }
+    .form-status:empty { display: none; }
+    .form-status.is-error { color: var(--rose-700); }
+    .form-note { margin: 1.1rem 0 0; font-size: .88rem; color: var(--muted); }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-success { text-align: center; padding: 1.5rem 0 1rem; }
+    .form-success img { width: 88px; height: 88px; margin: 0 auto .75rem; }
+    .form-success h3 { font-size: 2rem; outline: none; }
+    .form-success p { color: var(--muted); max-width: 26rem; margin: 0 auto 1.6rem; }
+
+    /* ---------- Footer ---------- */
+    .site-footer { background: var(--sage-50); border-top: 1px solid var(--sage-100); padding: 3.25rem 0 2.25rem; text-align: center; }
+    .footer__mark { width: 64px; height: 64px; margin: 0 auto .4rem; }
+    .footer__brand { display: flex; flex-direction: column; align-items: center; line-height: 1; margin: 0 0 .9rem; }
+    .footer__brand .brand__name { font-size: 1.15rem; }
+    .footer__brand .brand__script { font-size: 1.7rem; }
+    .footer__tagline { color: var(--muted); margin-bottom: 1.1rem; }
+    .footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: .5rem 1.5rem; list-style: none; margin: 0 0 1.6rem; padding: 0; }
+    .footer__links a { color: var(--sage-700); text-decoration: none; font-weight: 500; }
+    .footer__links a:hover { color: var(--rose-700); text-decoration: underline; }
+    .footer__small { font-size: .88rem; color: var(--muted); margin: 0; }
+
+    /* ---------- Lightbox ---------- */
+    .lightbox {
+      width: 100%; height: 100%; max-width: 100vw; max-height: 100vh; max-height: 100dvh;
+      margin: 0; padding: 0; border: 0; overflow: hidden;
+      background: rgba(44, 48, 38, .94); color: #F4F5EE;
+    }
+    .lightbox[open] { display: grid; place-items: center; }
+    .lightbox::backdrop { background: rgba(44, 48, 38, .5); }
+    .lightbox__figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 4.5rem 4.5rem 2rem; }
+    .lightbox__img {
+      width: auto; height: auto; max-width: min(100%, 1200px);
+      max-height: calc(100vh - 10rem); max-height: calc(100dvh - 10rem);
+      border-radius: 14px; box-shadow: 0 24px 60px -24px rgba(0, 0, 0, .7);
+    }
+    .lightbox__caption { font: 500 1.4rem/1.3 var(--font-serif); text-align: center; }
+    .lightbox__count { position: absolute; top: 1.4rem; left: 1.5rem; margin: 0; font-size: .9rem; letter-spacing: .12em; opacity: .75; }
+    .lightbox__btn {
+      position: absolute; display: grid; place-items: center; width: 3rem; height: 3rem; padding: 0;
+      border-radius: 50%; border: 1px solid rgba(255, 255, 255, .28); background: rgba(255, 255, 255, .08);
+      color: #fff; cursor: pointer; transition: background-color .2s;
+    }
+    .lightbox__btn:hover { background: rgba(255, 255, 255, .2); }
+    .lightbox__btn svg { width: 1.35rem; height: 1.35rem; }
+    .lightbox__close { top: 1rem; right: 1rem; }
+    .lightbox__prev, .lightbox__next { top: 50%; transform: translateY(-50%); }
+    .lightbox__prev { left: 1rem; }
+    .lightbox__next { right: 1rem; }
+    @media (max-width: 640px) {
+      .lightbox__figure { padding: 4.25rem .75rem 6rem; }
+      .lightbox__img { max-height: calc(100vh - 13rem); max-height: calc(100dvh - 13rem); }
+      .lightbox__prev, .lightbox__next { top: auto; bottom: 1.25rem; transform: none; }
+      .lightbox__prev { left: calc(50% - 3.75rem); }
+      .lightbox__next { right: calc(50% - 3.75rem); }
+    }
+
+    /* ---------- Motion preferences ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Little Nest Creations, back to top">
+        <img src="images/logo-mark.webp" alt="" width="193" height="193">
+        <span class="brand__text" aria-hidden="true">
+          <span class="brand__name">Little Nest</span>
+          <span class="brand__script">creations</span>
+        </span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="#creations">Creations</a></li>
+          <li><a href="#custom">Custom</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a class="nav__cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="top">
+      <img class="butterfly butterfly--pink" src="images/decor/butterfly-pink.webp" alt="" width="169" height="169">
+      <img class="butterfly butterfly--yellow" src="images/decor/butterfly-yellow.webp" alt="" width="111" height="132">
+
+      <div class="container hero__inner">
+        <img class="hero__logo" src="images/logo.webp" alt="Little Nest Creations, handmade with love" width="512" height="512" fetchpriority="high">
+        <h1 class="hero__title">Handmade crochet for <span class="script">little ones</span></h1>
+        <p class="hero__intro">Soft, snuggly pieces for babies and kids, crocheted by hand in New&nbsp;Zealand.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#creations">See my creations</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <picture>
+        <source media="(max-width: 575px)" srcset="images/decor/meadow-centre.webp" width="1176" height="545">
+        <img class="hero__meadow" src="images/decor/meadow.webp"
+             srcset="images/decor/meadow-1100.webp 1100w, images/decor/meadow.webp 1836w"
+             sizes="(max-width: 900px) 900px, 100vw"
+             alt="" width="1836" height="545">
+      </picture>
+    </section>
+
+    <!-- ============ Creations ============ -->
+    <section class="section" id="creations" aria-labelledby="creations-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">fresh off the hook</p>
+          <h2 id="creations-title">My creations</h2>
+          <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z"/></svg></div>
+          <p class="section__lead">Some of my latest makes: bunny teething rings in soft pastel shades, each with a velvety scrunchie collar and a smooth wooden ring. More little friends are on the way, so check back soon!</p>
+        </header>
+
+        <!--
+          ADDING A NEW PHOTO
+          1. Save two copies in images/creations/: a small one (about 1200px on the long side)
+             and a large one (about 2000px), e.g. sleepy-bear-sm.jpg and sleepy-bear-lg.jpg
+          2. Copy one <li> block below and change the file names, caption (data-caption + span) and alt text.
+          3. For landscape photos, add the class "gallery__item--wide" so the photo spans two columns.
+        -->
+        <div class="gallery-wrap">
+          <ul class="gallery" role="list">
+            <li class="gallery__item gallery__item--wide">
+              <a class="gallery__link" href="images/creations/bunny-trio-lg.jpg" data-caption="Dove grey, cream and blush bunnies">
+                <img src="images/creations/bunny-trio-sm.jpg" width="1200" height="925" loading="lazy" decoding="async"
+                     alt="Three crochet bunny teething rings on wooden rings: dove grey with a mocha collar, cream with a blush collar, and blush pink with a dusty rose collar">
+                <span class="gallery__caption" aria-hidden="true">Dove grey, cream &amp; blush bunnies
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/blush-bunnies-lg.jpg" data-caption="Blush bunnies with lilac and dusty rose collars">
+                <img src="images/creations/blush-bunnies-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
+                     alt="Two blush pink crochet bunny teething rings, one with a lilac velvet collar and one with a dusty rose collar">
+                <span class="gallery__caption" aria-hidden="true">Blush bunnies, lilac &amp; dusty rose
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/pink-and-blue-bunnies-lg.jpg" data-caption="Blush pink and baby blue, a sweet little pair">
+                <img src="images/creations/pink-and-blue-bunnies-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
+                     alt="A blush pink crochet bunny teething ring with a dusty rose collar next to a baby blue bunny with a navy collar">
+                <span class="gallery__caption" aria-hidden="true">Blush &amp; baby blue pair
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/cream-bunnies-lg.jpg" data-caption="Cream bunnies with mocha and blush collars">
+                <img src="images/creations/cream-bunnies-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
+                     alt="Two cream crochet bunny teething rings, one with a mocha velvet collar and one with a blush pink collar">
+                <span class="gallery__caption" aria-hidden="true">Cream bunnies, mocha &amp; blush
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/bunny-lineup-lg.jpg" data-caption="The whole bunny line-up">
+                <img src="images/creations/bunny-lineup-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
+                     alt="Four crochet bunny teething rings in a row: blush pink, baby blue, cream and dove grey, each with a velvet collar">
+                <span class="gallery__caption" aria-hidden="true">The whole bunny line-up
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="shop-note">
+          <p><strong>Online shop coming soon.</strong> Until then, if something catches your eye, just send me a message.</p>
+          <a class="btn btn--ghost" href="#contact" data-enquiry="Ordering a piece">Ask about a piece</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Custom requests ============ -->
+    <section class="section custom" id="custom" aria-labelledby="custom-title">
+      <div class="container split">
+        <figure class="frame">
+          <img src="images/creations/bunny-lineup-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
+               alt="Crochet bunny teething rings in blush pink, baby blue, cream and dove grey, showing different colour combinations">
+        </figure>
+        <div class="split__text">
+          <p class="kicker">made just for you</p>
+          <h2 id="custom-title">Custom requests welcome</h2>
+          <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z"/></svg></div>
+          <p>Have a colour combo in mind? Whether it's to match a nursery, a favourite colour or a special gift, I'm happy to take custom requests.</p>
+          <ol class="steps">
+            <li><div><strong>Send me a message</strong> <span>Tell me what you have in mind.</span></div></li>
+            <li><div><strong>We'll chat it through</strong> <span>Colours, details and anything else you'd like.</span></div></li>
+            <li><div><strong>I'll make it by hand</strong> <span>Crocheted just for you, stitch by stitch.</span></div></li>
+          </ol>
+          <a class="btn btn--primary" href="#contact" data-enquiry="Custom request">Ask about a custom piece</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <img class="about__bouquet" src="images/decor/bouquet.webp" alt="" width="546" height="664" loading="lazy">
+      <img class="about__bouquet about__bouquet--right" src="images/decor/bouquet.webp" alt="" width="546" height="664" loading="lazy">
+      <div class="container">
+        <div class="about__card">
+          <img class="about__mark" src="images/logo-mark.webp" alt="" width="193" height="193" loading="lazy">
+          <p class="kicker">hello</p>
+          <h2 id="about-title">Hi, I'm Samantha</h2>
+          <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z"/></svg></div>
+          <p>Little Nest Creations is my small crochet business here in New Zealand. I make soft, cuddly pieces for babies and kids, from teething rings to animal friends, all crocheted by hand, one stitch at a time.</p>
+          <p>Every piece is made with care, right down to the little details like the velvety collars on my bunnies. I hope they bring a smile to your little one (and to you, too).</p>
+          <p class="signature"><span>With love,</span>Samantha</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Care ============ -->
+    <section class="section care" id="care" aria-labelledby="care-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">a little care</p>
+          <h2 id="care-title">Caring for your crochet</h2>
+          <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z"/></svg></div>
+          <p class="section__lead">A few simple tips to keep your handmade piece looking lovely.</p>
+        </header>
+        <ul class="care__grid" role="list">
+          <li class="care__item">
+            <span class="care__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2C9 7.3 6 10.4 6 14a6 6 0 0 0 12 0c0-3.6-3-6.7-6-10.8z"/><path d="M9.2 14.6a2.9 2.9 0 0 0 2.6 2.6"/></svg></span>
+            <h3>Spot clean</h3>
+            <p>Gently clean the crochet with a damp cloth and mild soap, then lay it flat to air dry.</p>
+          </li>
+          <li class="care__item">
+            <span class="care__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.6"/></svg></span>
+            <h3>Keep the wood dry</h3>
+            <p>Please don't soak the wooden ring or put it in the dishwasher, microwave or steriliser.</p>
+          </li>
+          <li class="care__item">
+            <span class="care__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m20 20-4.7-4.7"/></svg></span>
+            <h3>Check before use</h3>
+            <p>Look for loose stitches or wear before each use, and stop using it if anything looks damaged.</p>
+          </li>
+          <li class="care__item">
+            <span class="care__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.1A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></svg></span>
+            <h3>Always supervise</h3>
+            <p>Teethers and toys are best enjoyed with a grown-up close by.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <p class="kicker">say hello</p>
+          <h2 id="contact-title">Get in touch</h2>
+          <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.5 3.2C20.5 15.7 12 21 12 21z"/></svg></div>
+          <p>Have a question, want to order a piece, or have a custom request in mind? Send me a message and I'll get back to you as soon as I can.</p>
+
+          <div class="socials">
+            <p class="socials__title">Follow along</p>
+            <a class="social" href="https://www.instagram.com/littlenestcreationsnz" target="_blank" rel="noopener">
+              <span class="social__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.6A2.6 2.6 0 0 1 5.6 6h1.6l1.4-2.2h6.8L16.8 6h1.6A2.6 2.6 0 0 1 21 8.6v8.8a2.6 2.6 0 0 1-2.6 2.6H5.6A2.6 2.6 0 0 1 3 17.4z"/><circle cx="12" cy="12.8" r="3.7"/></svg></span>
+              <span class="social__label"><strong>Instagram</strong><span>@littlenestcreationsnz</span></span>
+              <svg class="social__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg>
+              <span class="visually-hidden">(opens in a new tab)</span>
+            </a>
+            <a class="social" href="https://www.facebook.com/profile.php?id=61595141005479" target="_blank" rel="noopener">
+              <span class="social__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6c0 4.1-3.8 7.4-8.5 7.4-1.3 0-2.5-.2-3.6-.7L3.8 19.6l1.3-3.7a7 7 0 0 1-1.6-4.3c0-4.1 3.8-7.4 8.5-7.4s8.5 3.3 8.5 7.4z"/><path d="M8.6 11.7h.01M12 11.7h.01M15.4 11.7h.01" stroke-width="2.4"/></svg></span>
+              <span class="social__label"><strong>Facebook</strong><span>Message me or follow along</span></span>
+              <svg class="social__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg>
+              <span class="visually-hidden">(opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <!-- Contact form powered by Web3Forms (https://web3forms.com). Messages go to the email linked to this access key. -->
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d4d98cbe-c4c4-47d1-9093-16cd0f10f8ce">
+            <input type="hidden" name="subject" value="New enquiry from littlenestcreations.co.nz">
+            <input type="hidden" name="from_name" value="Little Nest Creations website">
+            <!-- Spam trap: real people never see or tick this -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" aria-hidden="true">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required maxlength="100">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required maxlength="200">
+              </div>
+              <div class="field field--full">
+                <label for="enquiry">What's it about?</label>
+                <select id="enquiry" name="enquiry">
+                  <option>General question</option>
+                  <option>Ordering a piece</option>
+                  <option>Custom request</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="field field--full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required maxlength="5000" placeholder="Tell me a little about what you're after, like colours, who it's for, or any questions."></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit">
+                Send message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </div>
+            <p class="form-note">Your details are only used to reply to your message.</p>
+          </form>
+
+          <div class="form-success" id="form-success" hidden>
+            <img src="images/logo-mark.webp" alt="" width="193" height="193" loading="lazy">
+            <h3 id="form-success-title" tabindex="-1">Thank you!</h3>
+            <p>Your message is on its way. I'll get back to you as soon as I can.</p>
+            <button class="btn btn--ghost" type="button" id="form-again">Send another message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <img class="footer__mark" src="images/logo-mark.webp" alt="" width="193" height="193" loading="lazy">
+      <p class="footer__brand">
+        <span class="brand__name">Little Nest</span>
+        <span class="brand__script">creations</span>
+      </p>
+      <p class="footer__tagline">Handmade with love in New Zealand</p>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/littlenestcreationsnz" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61595141005479" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer__small">&copy; <span id="year">2026</span> Little Nest Creations &middot; Made by Samantha Sells</p>
+    </div>
+  </footer>
+
+  <!-- ============ Photo viewer ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox__btn lightbox__close" type="button" aria-label="Close photo viewer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <p class="lightbox__count" aria-live="polite"></p>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="images/logo-mark.webp" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__next" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+  </dialog>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // Footer year
+      var year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      // Soft border under the header once the page scrolls
+      var header = document.querySelector('.site-header');
+      var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Buttons like "Ask about a custom piece" pre-select the enquiry type
+      var enquiry = document.getElementById('enquiry');
+      document.querySelectorAll('[data-enquiry]').forEach(function (link) {
+        link.addEventListener('click', function () { if (enquiry) enquiry.value = link.dataset.enquiry; });
+      });
+
+      // ---------- Photo viewer ----------
+      var links = Array.prototype.slice.call(document.querySelectorAll('.gallery__link'));
+      var dialog = document.getElementById('lightbox');
+      if (dialog && typeof dialog.showModal === 'function' && links.length) {
+        var img = dialog.querySelector('.lightbox__img');
+        var caption = dialog.querySelector('.lightbox__caption');
+        var count = dialog.querySelector('.lightbox__count');
+        var current = 0;
+        var opener = null;
+        var upgradedFor = null;
+        // Swap in the large photo only when the small one would look blurry on this screen
+        var upgrade = function () {
+          var link = links[current];
+          if (!dialog.open || upgradedFor === link || !img.naturalWidth) return;
+          var needed = img.getBoundingClientRect().width * (window.devicePixelRatio || 1);
+          if (needed <= img.naturalWidth * 1.15) return;
+          upgradedFor = link;
+          var large = new Image();
+          large.onload = function () { if (dialog.open && links[current] === link) img.src = large.src; };
+          large.src = link.href;
+        };
+        img.addEventListener('load', upgrade);
+        var show = function (index) {
+          current = (index + links.length) % links.length;
+          var link = links[current];
+          var thumb = link.querySelector('img');
+          upgradedFor = null;
+          img.src = thumb.currentSrc || thumb.src; // already loaded, so it appears instantly
+          img.alt = thumb.alt;
+          caption.textContent = link.dataset.caption || '';
+          count.textContent = (current + 1) + ' / ' + links.length;
+        };
+        links.forEach(function (link, index) {
+          link.addEventListener('click', function (event) {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+            event.preventDefault();
+            opener = link;
+            show(index);
+            dialog.showModal();
+            requestAnimationFrame(upgrade);
+          });
+        });
+        dialog.querySelector('.lightbox__prev').addEventListener('click', function () { show(current - 1); });
+        dialog.querySelector('.lightbox__next').addEventListener('click', function () { show(current + 1); });
+        dialog.querySelector('.lightbox__close').addEventListener('click', function () { dialog.close(); });
+        dialog.addEventListener('click', function (event) {
+          if (event.target === dialog || event.target.classList.contains('lightbox__figure')) dialog.close();
+        });
+        dialog.addEventListener('keydown', function (event) {
+          if (event.key === 'ArrowLeft') show(current - 1);
+          if (event.key === 'ArrowRight') show(current + 1);
+        });
+        dialog.addEventListener('close', function () {
+          img.removeAttribute('src');
+          if (opener) opener.focus();
+        });
+        var touchX = null;
+        dialog.addEventListener('touchstart', function (event) { touchX = event.touches[0].clientX; }, { passive: true });
+        dialog.addEventListener('touchend', function (event) {
+          if (touchX === null) return;
+          var dx = event.changedTouches[0].clientX - touchX;
+          if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+          touchX = null;
+        });
+      }
+
+      // ---------- Contact form (Web3Forms) ----------
+      var form = document.getElementById('contact-form');
+      if (form && window.fetch) {
+        var button = form.querySelector('button[type="submit"]');
+        var buttonHtml = button.innerHTML;
+        var status = form.querySelector('.form-status');
+        var success = document.getElementById('form-success');
+        var successTitle = document.getElementById('form-success-title');
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          var data = {};
+          new FormData(form).forEach(function (value, key) { data[key] = value; });
+          var name = String(data.name || '').trim();
+          data.subject = (data.enquiry || 'New enquiry') + ' from ' + (name || 'the website') + ' | Little Nest Creations';
+
+          button.disabled = true;
+          button.textContent = 'Sending…';
+          status.className = 'form-status';
+          status.textContent = '';
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+          })
+            .then(function (response) {
+              return response.json().catch(function () { return {}; }).then(function (json) {
+                if (!response.ok || json.success === false) throw new Error(json.message || ('HTTP ' + response.status));
+              });
+            })
+            .then(function () {
+              form.reset();
+              form.hidden = true;
+              successTitle.textContent = name ? 'Thank you, ' + name.split(' ')[0] + '!' : 'Thank you!';
+              success.hidden = false;
+              successTitle.focus();
+            })
+            .catch(function (error) {
+              console.error('Contact form error:', error);
+              status.classList.add('is-error');
+              status.textContent = "Sorry, your message didn't send. Please try again, or message me on Instagram or Facebook.";
+            })
+            .then(function () {
+              button.disabled = false;
+              button.innerHTML = buttonHtml;
+            });
+        });
+
+        document.getElementById('form-again').addEventListener('click', function () {
+          success.hidden = true;
+          form.hidden = false;
+          form.querySelector('#name').focus();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
