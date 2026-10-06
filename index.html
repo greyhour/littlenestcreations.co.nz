@@ -24,7 +24,7 @@
   <meta property="og:image" content="https://littlenestcreations.co.nz/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The Little Nest Creations logo next to a pink and a blue crochet bunny teething ring">
+  <meta property="og:image:alt" content="The Little Nest Creations logo next to a duck-egg blue and a cream crochet bunny teething ring">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fonts are self-hosted in /fonts/ (all SIL Open Font Licence) -->
@@ -270,19 +270,19 @@
     /* ---------- Creations gallery ---------- */
     .gallery-wrap { container-type: inline-size; }
     .gallery {
-      --cols: 3;
+      --cols: 2;
       --gap: clamp(.65rem, 1.6vw, 1.15rem);
       list-style: none; margin: 0; padding: 0;
       display: grid; gap: var(--gap);
       grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-      grid-auto-rows: 22rem;
+      grid-auto-rows: 20rem;
       grid-auto-flow: dense;
     }
     @supports (width: 1cqi) {
-      /* every row is exactly as tall as a 4:5 portrait tile */
-      .gallery { grid-auto-rows: calc((100cqi - (var(--cols) - 1) * var(--gap)) / var(--cols) * 1.25); }
+      /* every row is exactly as tall as a 2:3 portrait tile */
+      .gallery { grid-auto-rows: calc((100cqi - (var(--cols) - 1) * var(--gap)) / var(--cols) * 1.5); }
     }
-    @media (max-width: 760px) { .gallery { --cols: 2; } }
+    @media (min-width: 700px) { .gallery { --cols: 4; } }
     .gallery__item {
       position: relative; overflow: hidden; border-radius: var(--radius);
       background: var(--sage-100); box-shadow: var(--shadow);
@@ -327,7 +327,7 @@
       border: 1.5px solid var(--blush-300); border-radius: calc(var(--radius) + 4px);
     }
     .frame img {
-      position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+      position: relative; z-index: 1; width: 100%; aspect-ratio: 2 / 3; object-fit: cover;
       border-radius: var(--radius); box-shadow: var(--shadow);
     }
     .steps { list-style: none; counter-reset: step; margin: 1.6rem 0 2.1rem; padding: 0; display: grid; gap: 1rem; }
@@ -552,50 +552,77 @@
 
         <!--
           ADDING A NEW PHOTO
-          1. Save two copies in images/creations/: a small one (about 1200px on the long side)
-             and a large one (about 2000px), e.g. sleepy-bear-sm.jpg and sleepy-bear-lg.jpg
+          1. Save two copies in images/creations/: a small one for the grid (600 x 900px)
+             and a large one for the pop-up viewer (about 1400 x 2100px),
+             e.g. sleepy-bear-sm.jpg and sleepy-bear-lg.jpg
           2. Copy one <li> block below and change the file names, caption (data-caption + span) and alt text.
-          3. For landscape photos, add the class "gallery__item--wide" so the photo spans two columns.
+          3. Portrait photos (2:3) fill one tile. For a landscape photo, add the class
+             "gallery__item--wide" so it spans two columns.
+          The grid shows 4 photos across on bigger screens and 2 on phones, so multiples of 4 fill it neatly.
         -->
         <div class="gallery-wrap">
           <ul class="gallery" role="list">
-            <li class="gallery__item gallery__item--wide">
-              <a class="gallery__link" href="images/creations/bunny-trio-lg.jpg" data-caption="Dove grey, cream and blush bunnies">
-                <img src="images/creations/bunny-trio-sm.jpg" width="1200" height="925" loading="lazy" decoding="async"
-                     alt="Three crochet bunny teething rings on wooden rings: dove grey with a mocha collar, cream with a blush collar, and blush pink with a dusty rose collar">
-                <span class="gallery__caption" aria-hidden="true">Dove grey, cream &amp; blush bunnies
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/blue-and-cream-bunnies-lg.jpg" data-caption="Duck-egg blue and cream bunnies">
+                <img src="images/creations/blue-and-cream-bunnies-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="Two crochet bunny teething rings on cream linen: a duck-egg blue bunny with a navy velvet collar and a cream bunny with a blush pink collar">
+                <span class="gallery__caption" aria-hidden="true">Duck-egg blue &amp; cream
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
               </a>
             </li>
             <li class="gallery__item">
               <a class="gallery__link" href="images/creations/blush-bunnies-lg.jpg" data-caption="Blush bunnies with lilac and dusty rose collars">
-                <img src="images/creations/blush-bunnies-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
-                     alt="Two blush pink crochet bunny teething rings, one with a lilac velvet collar and one with a dusty rose collar">
+                <img src="images/creations/blush-bunnies-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="Two blush pink crochet bunny teething rings side by side, one with a lilac velvet collar and one with a dusty rose collar, nestled in white linen">
                 <span class="gallery__caption" aria-hidden="true">Blush bunnies, lilac &amp; dusty rose
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
               </a>
             </li>
             <li class="gallery__item">
-              <a class="gallery__link" href="images/creations/pink-and-blue-bunnies-lg.jpg" data-caption="Blush pink and baby blue, a sweet little pair">
-                <img src="images/creations/pink-and-blue-bunnies-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
-                     alt="A blush pink crochet bunny teething ring with a dusty rose collar next to a baby blue bunny with a navy collar">
-                <span class="gallery__caption" aria-hidden="true">Blush &amp; baby blue pair
+              <a class="gallery__link" href="images/creations/grey-bunny-lg.jpg" data-caption="Dove grey bunny with a latte collar">
+                <img src="images/creations/grey-bunny-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="A dove grey crochet bunny teething ring with a latte velvet collar and a natural wooden ring, styled with a cream rose">
+                <span class="gallery__caption" aria-hidden="true">Dove grey bunny, latte collar
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
               </a>
             </li>
             <li class="gallery__item">
-              <a class="gallery__link" href="images/creations/cream-bunnies-lg.jpg" data-caption="Cream bunnies with mocha and blush collars">
-                <img src="images/creations/cream-bunnies-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
-                     alt="Two cream crochet bunny teething rings, one with a mocha velvet collar and one with a blush pink collar">
-                <span class="gallery__caption" aria-hidden="true">Cream bunnies, mocha &amp; blush
+              <a class="gallery__link" href="images/creations/cream-bunnies-billy-button-lg.jpg" data-caption="Cream bunnies with latte and blush collars">
+                <img src="images/creations/cream-bunnies-billy-button-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="Two cream crochet bunny teething rings, one with a latte velvet collar and one with a blush pink collar, with white flowers and a yellow billy button">
+                <span class="gallery__caption" aria-hidden="true">Cream bunnies, latte &amp; blush
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
               </a>
             </li>
             <li class="gallery__item">
-              <a class="gallery__link" href="images/creations/bunny-lineup-lg.jpg" data-caption="The whole bunny line-up">
-                <img src="images/creations/bunny-lineup-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
-                     alt="Four crochet bunny teething rings in a row: blush pink, baby blue, cream and dove grey, each with a velvet collar">
-                <span class="gallery__caption" aria-hidden="true">The whole bunny line-up
+              <a class="gallery__link" href="images/creations/cream-bunny-closeup-lg.jpg" data-caption="A cream bunny with a latte collar, up close">
+                <img src="images/creations/cream-bunny-closeup-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="Close-up of a cream crochet bunny teething ring with a latte velvet collar, with a blush pink bunny softly out of focus in front">
+                <span class="gallery__caption" aria-hidden="true">Cream bunny, up close
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/blue-and-grey-bunnies-lg.jpg" data-caption="Duck-egg blue and dove grey bunnies">
+                <img src="images/creations/blue-and-grey-bunnies-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="A duck-egg blue crochet bunny with a navy velvet collar next to a dove grey bunny with a blush pink collar, both on wooden teething rings">
+                <span class="gallery__caption" aria-hidden="true">Duck-egg blue &amp; dove grey
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/cream-bunnies-lg.jpg" data-caption="A cream pair on soft linen">
+                <img src="images/creations/cream-bunnies-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="Two cream crochet bunny teething rings on soft cream linen, one with a latte velvet collar and one with a blush pink collar">
+                <span class="gallery__caption" aria-hidden="true">A cream pair
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              </a>
+            </li>
+            <li class="gallery__item">
+              <a class="gallery__link" href="images/creations/blush-bunnies-billy-buttons-lg.jpg" data-caption="Blush bunnies with billy buttons">
+                <img src="images/creations/blush-bunnies-billy-buttons-sm.jpg" width="600" height="900" loading="lazy" decoding="async"
+                     alt="Two blush pink crochet bunny teething rings lying on white linen, one with a lilac collar and one with a dusty rose collar, beside yellow billy button flowers">
+                <span class="gallery__caption" aria-hidden="true">Blush bunnies &amp; billy buttons
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
               </a>
             </li>
@@ -613,8 +640,11 @@
     <section class="section custom" id="custom" aria-labelledby="custom-title">
       <div class="container split">
         <figure class="frame">
-          <img src="images/creations/bunny-lineup-sm.jpg" width="900" height="1200" loading="lazy" decoding="async"
-               alt="Crochet bunny teething rings in blush pink, baby blue, cream and dove grey, showing different colour combinations">
+          <img src="images/creations/bunny-trio-sm.jpg"
+               srcset="images/creations/bunny-trio-sm.jpg 600w, images/creations/bunny-trio-lg.jpg 1366w"
+               sizes="(min-width: 860px) 460px, calc(100vw - 3.5rem)"
+               width="600" height="900" loading="lazy" decoding="async"
+               alt="Three crochet bunny teething rings in cream, dove grey and blush pink, each with a different velvet collar, styled with white flowers">
         </figure>
         <div class="split__text">
           <p class="kicker">made just for you</p>
